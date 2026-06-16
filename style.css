@@ -1,0 +1,399 @@
+/* estilizacao geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* LOGIN */
+.login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.login-container p {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.formulario label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.formulario input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.formulario input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.formulario button {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #555;
+}
+
+/* erro */
+.erro {
+  background-color: #ffe0e0;
+  color: #cc0000;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.escondido {
+  display: none;
+}
+
+/*header */
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* categorias */
+.menu-categorias {
+  display: flex;
+  gap: 8px;
+}
+
+.cat-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.cat-btn:hover {
+  background-color: white;
+  color: #333;
+}
+
+.cat-btn.ativo {
+  background-color: white;
+  color: #333;
+  font-weight: bold;
+}
+
+/* acoes do header */
+.header-acoes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-acoes a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#btn-carrinho {
+  background-color: white;
+  color: #333;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* cArossel*/
+.carrossel {
+  position: relative;
+  overflow: hidden;
+  background-color: #222;
+  height: 300px;
+}
+
+.carrossel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carrossel-slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+.carrossel-slide h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.carrossel-slide p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+
+.carrossel-slide .emoji {
+  font-size: 80px;
+  margin-bottom: 15px;
+}
+
+.carrossel-slide .preco {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.carrossel-btn.esquerda { left: 10px; }
+.carrossel-btn.direita  { right: 10px; }
+
+.carrossel-btn:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+
+/* produtos */
+.conteudo {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.conteudo h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card-produto {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-produto .emoji {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.card-produto h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.card-produto .categoria {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 8px;
+}
+
+.card-produto .preco {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-produto button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%;
+}
+
+.card-produto button:hover {
+  background-color: #555;
+}
+
+/* carrinho */
+.carrinho-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 200;
+}
+
+.carrinho-painel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  background-color: white;
+  z-index: 300;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.carrinho-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.carrinho-header h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.carrinho-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+}
+
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.carrinho-item .emoji {
+  font-size: 30px;
+}
+
+.carrinho-item-info {
+  flex: 1;
+}
+
+.carrinho-item-info p {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.carrinho-item-info span {
+  font-size: 12px;
+  color: gray;
+}
+
+.carrinho-total {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.btn-finalizar {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-finalizar:hover {
+  background-color: #555;
+}
